@@ -61,7 +61,7 @@ int main(){
 			case 1:
 				cout<<"Indica el numero de valores a introducir\n";
 				cin>>valores;
-				while valores){
+				while (valores){
 					cout<<"Valor["<<i<<"]\n";
 					cin>>c;
 					//mando a llmar al metodo para insertarlo

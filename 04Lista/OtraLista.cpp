@@ -38,7 +38,8 @@ void insertar(int dat);
 void mostrar(void);
 void borrar(void);
 void menu(void);
-
+void guardar(void);
+void cargar(void);
 //void guardar(void);
 //void cargar(void);
 
@@ -84,13 +85,13 @@ void menu(void){
 				mostrar();
 				break;
 			case 4:
-				borrar();
+				//borrar();
 				break;
 			case 5:
-				//guardar();
+				guardar();
 				break;
 			case 6:
-				//cargar();
+				cargar();
 				break;
 			case 7:
 				cout<<"\n\n Ayos uwu :3";
@@ -131,6 +132,143 @@ void mostrar(void){
 	cout<<"\n Fin de la lista";
 	getch();
 }
+
+//buscar
+int buscar(int d){
+	//si esta vacia
+	if(!i){
+		cout<<"\n No hay datos en la lista";
+		getch();
+		return(0);
+	}
+	
+	//cuando si hay datos
+	p = i;
+	a = NULL;
+	//recorrer los valores de lista;
+	while(p->s && p->i < d){
+		a=p;
+		p=p->s;
+	}
+	return(p->i==d?1:0);
+}
+
+
+//insertar
+void insertar(int dat){
+	//si esta vacio
+	if(!i){
+		//hay que crear un nuevo nodo
+		//porque se ingresa por primera vez
+		i = new(dato);
+		i->s = NULL;
+		i->i = dat;
+		return;
+	}
+	//saber si existe o no el dato
+	if(buscar(dat)){
+		cout<<"\El dato Existe llegale T_T";
+		getch();
+		return;
+	}
+	/*
+	Imaginemos que existen varios valores
+	
+	nodo 1 = -2,  nodo 2 = 0, nodo 3 = 4  nodo 4 = 8
+	
+	insertar 4
+	
+	*/
+	
+	//rpimero creamos el nodo
+	e = new(dato);
+	
+	e->i=dat;
+	
+if(p==i && p->s)
+ {
+ e->s=p;
+ i=e;
+ return;
+ }
+ if(p==i && !p->s)
+ {
+ if(p->i < e->i)
+ {
+ p->s=e;
+ e->s=NULL;
+ }
+ else
+ {
+ e->s=p;
+ i=e;
+ }
+ return;
+ }
+ if(p->s)
+ {
+ a->s=e;
+ e->s=p;
+ return;
+ }
+ if(e->i > p->i)
+ {
+ e->s=NULL;
+ p->s=e;
+ }
+ else
+ {
+ a->s=e;
+ e->s=p;
+ }
+ }
+ 
+ void guardar(void)
+ {
+ FILE *arch;
+ arch=fopen("DATOS-LISTA.TXT","w");
+ if(!i)
+ {
+ cout<<"\n\nNO HAY LISTA PARA GUARDAR";
+ getch();
+ return;
+ }
+ p=i;
+ while(p)
+ {
+ fprintf(arch,"%i\n",p->i);
+ p=p->s;
+ }
+ cout<<"\n\nArchivo Guardado";
+ fclose(arch);
+ getch();
+ }
+ 
+void cargar(void)
+ {
+ int c,x;
+ FILE *arch;
+ arch=fopen("DATOS-LISTA.TXT","r");
+ if(!arch)
+ {
+ cout<<"\n\nNO EXISTE EL ARCHIVO";
+ getch();
+ return;
+ }
+ 
+do {
+ c=fscanf(arch,"%i\n",&x);
+ if(c!=EOF)
+ {
+ insertar(x);
+ }
+ }
+ while (c!=EOF);
+ cout<<"\n\nArchivo Cargado";
+ fclose(arch);
+ getch();
+ }
+
 
 
 
