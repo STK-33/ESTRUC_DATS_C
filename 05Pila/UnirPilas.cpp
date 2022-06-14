@@ -30,15 +30,17 @@ int pop(pila &);
 main(){
 	pila p1 = NULL;
 	pila p2 = NULL;
-	pila p3 = NULL;
+	pila p = NULL;
 	
 	int opc, n, valor, i;
 	
 	do{
 		cout<<"1.- Apilar \n";
-		cout<<"2.- Ver valores de la pila \n";
-		cout<<"3.- Unir Pilas \n";
-		cout<<"4.- Salir \n";
+		cout<<"2.- Eliminar Dato \n";
+		cout<<"3.- Imprimir valores de la pila \n";
+		cout<<"4.- Unir Pilas \n";
+		cout<<"5.- Eliminar Pila \n";
+		cout<<"6.- Salir \n";
 		cout<<"Ingresa la opcion deseada: \n";
 		
 		cin>>opc;
@@ -62,19 +64,33 @@ main(){
 				push(p2, valor);
 			}
 			break;
-		case 2:
+			
+		case 2: if(p!=NULL)
+   			{ cout<<"Valor Eliminado";
+     		n=pop(p);
+     		cout<<n<<endl;
+   			}
+   			else  cout<<"Pila vacia"<<endl;
+   			break;
+		case 3:
 			cout<<"Contenido de la pila 1\n";
 			imprimir1(p1);
 			cout<<"Contenido de la pila 2\n";
 			imprimir2(p2);
 			break;
-		case 3: 
+		case 4: 
 			cout<<"Pilas Unidas\n";
 			unirPilas(p1, p2);
 			break;
+			
+		case 5:
+		
+   		cout<<"Pila Eliminada"<<endl;
+   		eliminarPila (p);
+   		break;
 		
 		}
-	}while(opc!=4);
+	}while(opc!=6);
 }
 
 
@@ -86,6 +102,25 @@ void push(pila &p, int n){
 	p = q;
 }
 
+//Función para eliminar elementos en la pila
+int pop(pila &p)
+{ int n=p->nro;
+  pila q=p;
+  p=p->siguiente;
+  delete (q);
+  return n;
+}
+
+//Función para eliminar la pila
+void eliminarPila(pila &p)
+{ pila q;
+  while(p!=NULL)
+  {q=p;
+   p=q->siguiente;
+   delete(q); 
+  }
+}
+
 void unirPilas(pila p1, pila p2){
 	pila q = p1;
 	while(q->siguiente != NULL){
@@ -94,6 +129,14 @@ void unirPilas(pila p1, pila p2){
 	}
 }
 
+//Función para visualizar elementos en la pila
+void imprimir(pila p1)
+{ while(p1!=NULL)
+ {cout<<p1->nro<<endl;
+  p1=p1->siguiente;
+ }
+cout<<endl;
+}
 
 void imprimir1(pila p1){
 	while(p1!=NULL){
