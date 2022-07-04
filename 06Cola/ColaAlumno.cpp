@@ -106,7 +106,4 @@ void insertarDatos(Nodo *frente, Nodo *fin, ICO alumnos){
 	fin = n_nodo;
 }
 
-bool c_vacia(Nodo *frente){
-	//operar ternario para saber si esta vacia
-	return (frente == NULL)? true:false;
-}
+
