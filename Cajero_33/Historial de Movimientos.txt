@@ -1,0 +1,56 @@
+	--------UTC BANK--------
+Hora: 8:43:13pm   Fecha: 15/8/2022   Cajero: STK-33
+
+UTC NIZA
+CDMX***************33
+Deposito :0
+Saldo Actual :6000
+Retiro :0
+	--------UTC BANK--------
+Hora: 8:43:23pm   Fecha: 15/8/2022   Cajero: STK-33
+
+UTC NIZA
+CDMX***************33
+Deposito :0
+Saldo Actual :100
+Retiro :5900
+	--------UTC BANK--------
+Hora: 8:43:38pm   Fecha: 15/8/2022   Cajero: STK-33
+
+UTC NIZA
+CDMX***************33
+Deposito :500
+Saldo Actual :600
+Retiro :5900
+	--------UTC BANK--------
+Hora: 11:18:18pm   Fecha: 16/8/2022   Cajero: STK-33
+
+UTC NIZA
+CDMX***************33
+Deposito :0
+Saldo Actual :6000
+Retiro :0
+	--------UTC BANK--------
+Hora: 9413am          Fecha: 17/8/2022   Cajero: STK-33
+
+UTC NIZA
+CDMX***************33
+Deposito :0
+Saldo Actual :6000
+Retiro :0
+	--------UTC BANK--------
+Hora: 9428am          Fecha: 17/8/2022   Cajero: STK-33
+
+UTC NIZA
+CDMX***************33
+Deposito :0
+Saldo Actual :0
+Retiro :6000
+	--------UTC BANK--------
+Hora: 9438am          Fecha: 17/8/2022   Cajero: STK-33
+
+UTC NIZA
+CDMX***************33
+Deposito :7000
+Saldo Actual :7000
+Retiro :6000
